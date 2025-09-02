@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ÁGIL GAS - Entrega Rápida de Gás</title>
+    <meta name="description" content="Entrega rápida e segura de gás direto na sua casa. ÁGIL GAS - qualidade, rapidez e segurança garantidas.">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <div class="nav-logo">
+                <div class="logo-icon">
+                    <i class="fas fa-fire"></i>
+                </div>
+                <span class="logo-text">ÁGIL GAS</span>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="#inicio" class="nav-link" onclick="scrollToSection('inicio')">Início</a>
+                <a href="#sobre" class="nav-link" onclick="scrollToSection('sobre')">Sobre</a>
+            </div>
+            
+            <button class="nav-toggle" id="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Banner Section -->
+    <section class="banner-section" id="inicio">
+        <div class="banner-pattern"></div>
+        <div class="container">
+            <div class="banner-content">
+                <div class="banner-text">
+                    <h1 class="banner-title">
+                        Compre seu botijão
+                        <span class="banner-brand">ÁGIL GAS</span>
+                    </h1>
+                    <p class="banner-description">
+                        Entrega rápida, segura e com qualidade garantida direto na sua casa.
+                    </p>
+                    <button class="btn btn-primary" onclick="showOrderToast()">
+                        FAÇA SEU PEDIDO AGORA
+                    </button>
+                </div>
+                <div class="banner-image">
+                    <img src="attached_assets/Imagem do WhatsApp de 2025-07-15 à(s) 16.37.13_b68bca60_1755955705597.jpg" 
+                         alt="Entregador Ágil Gas com botijão" class="delivery-image">
+                    <div class="decorative-elements">
+                        <div class="decoration decoration-1"></div>
+                        <div class="decoration decoration-2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="banner-gradient"></div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h2 class="hero-title">
+                        PEDIU,<br />
+                        <span class="hero-highlight">CHEGOU!</span>
+                    </h2>
+                    <p class="hero-description">
+                        Entrega rápida e segura de gás direto na sua casa.
+                    </p>
+                    <button class="btn btn-primary" onclick="showOrderToast()">
+                        FAÇA SEU PEDIDO
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                
+                <div class="hero-illustrations">
+                    <div class="illustration-card">
+                        <div class="illustration-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h3 class="card-title">Entregador Profissional</h3>
+                        <p class="card-description">Equipe treinada e equipada</p>
+                    </div>
+                    
+                    <div class="illustration-card">
+                        <div class="app-interface">
+                            <div class="app-header">
+                                <div class="app-icon">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="app-info">
+                                    <h3 class="card-title">Pedido Fácil</h3>
+                                    <p class="card-description">Pelo app ou telefone</p>
+                                </div>
+                            </div>
+                            <div class="app-content">
+                                <div class="location-card">
+                                    <div class="location-indicator"></div>
+                                    <span>Nossa localização</span>
+                                </div>
+                                <div class="tracking-card">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <a href="https://maps.app.goo.gl/Wm5ZhZBKxT2euLV76" target="_blank" class="map-link">
+                                        <p>Ver no Google Maps</p>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Por que escolher a ÁGIL GAS?</h2>
+                <p class="section-description">
+                    Oferecemos o melhor serviço de entrega de gás com qualidade, rapidez e segurança.
+                </p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card" style="animation-delay: 0s">
+                    <div class="feature-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h3 class="feature-title">Entrega Rápida</h3>
+                    <p class="feature-description">Chegamos até você em até 30 minutos após o pedido.</p>
+                </div>
+                
+                <div class="feature-card" style="animation-delay: 0.2s">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Segurança Total</h3>
+                    <p class="feature-description">Profissionais certificados e equipamentos de qualidade.</p>
+                </div>
+                
+                <div class="feature-card" style="animation-delay: 0.4s">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="feature-title">Pedido Fácil</h3>
+                    <p class="feature-description">Faça seu pedido pelo app, site ou telefone com total comodidade.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="sobre">
+        <div class="container">
+            <div class="contact-content">
+                <h2 class="section-title">Entre em Contato</h2>
+                <p class="section-description">
+                    Estamos prontos para atender você com o melhor serviço de entrega de gás.
+                </p>
+                
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Telefone</h3>
+                                <p>(61) 9999-9999</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Localização</h3>
+                                <p>Gama, DF</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>Horário</h3>
+                                <p>Segunda a Sábado - 08h às 20h</p>
+								<p>Domingo e Feriado - 08h às 12h</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="order-card">
+                        <h3 class="order-title">Faça seu Pedido Agora</h3>
+                        <button class="btn btn-primary btn-full" onclick="showOrderToast()">
+                            <i class="fas fa-gas-pump"></i>
+                            PEDIR GÁS AGORA
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <span class="logo-text">ÁGIL GAS</span>
+                </div>
+                
+                <div class="social-links">
+                    <a href="https://www.instagram.com/agilgasdf?igsh=bnJ0bmsyeThlcDB3" target="_blank" class="social-link" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/5561992730104" target="_blank" class="social-link" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">
+                    &copy; <span id="current-year"></span> ÁGIL GAS. Todos os direitos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <div class="toast-content">
+            <div class="toast-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="toast-text">
+                <h4>Redirecionando para WhatsApp!</h4>
+                <p>Você será direcionado para fazer seu pedido.</p>
+            </div>
+            <button class="toast-close" onclick="hideToast()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
