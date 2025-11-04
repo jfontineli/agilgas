@@ -65,7 +65,7 @@ function showOrderToast() {
 
 // Function to redirect to WhatsApp
 function redirectToWhatsApp() {
-    const phoneNumber = "5561992730104";
+    const phoneNumber = "5561996176398";
     const message = "Olá! Gostaria de fazer um pedido de gás através do ÁGIL GAS.";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     
