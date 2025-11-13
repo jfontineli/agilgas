@@ -65,8 +65,9 @@ function showOrderToast() {
 
 // Function to redirect to WhatsApp
 function redirectToWhatsApp() {
+    // Número oficial da revenda (formato internacional, sem +)
     const phoneNumber = "5561996176398";
-    const message = "Olá! Gostaria de fazer um pedido de gás através do ÁGIL GAS.";
+    const message = "Olá! Gostaria de pedir um botijão Supergasbras com a Ágil Gás.";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     
     // Open WhatsApp in a new tab/window
@@ -100,10 +101,10 @@ window.addEventListener('scroll', function() {
     const header = document.getElementById('header');
     
     if (window.scrollY > 100) {
-        header.style.backgroundColor = 'rgba(30, 64, 175, 0.95)';
+        header.style.backgroundColor = 'rgba(0, 0, 0, 0.95)';
         header.style.backdropFilter = 'blur(10px)';
     } else {
-        header.style.backgroundColor = 'var(--primary-blue)';
+        header.style.backgroundColor = 'rgba(0, 0, 0, 0.95)';
         header.style.backdropFilter = 'none';
     }
 });
@@ -203,3 +204,54 @@ const rippleStyles = `
 const styleSheet = document.createElement('style');
 styleSheet.textContent = rippleStyles;
 document.head.appendChild(styleSheet);
+
+// ==== CARROSSEL SUPERGASBRAS ==== //
+
+let currentSlide = 0;
+let slides = [];
+let dots = [];
+let carouselInterval = null;
+
+function initCarousel() {
+    slides = document.querySelectorAll('.carousel-slide');
+    dots = document.querySelectorAll('.dot');
+
+    if (!slides.length || !dots.length) {
+        return;
+    }
+
+    showSlide(0);
+
+    // troca automática a cada 4 segundos
+    carouselInterval = setInterval(nextSlide, 4000);
+}
+
+function showSlide(n) {
+    if (!slides.length) return;
+
+    slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === n);
+    });
+
+    dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === n);
+    });
+
+    currentSlide = n;
+}
+
+function nextSlide() {
+    if (!slides.length) return;
+    const next = (currentSlide + 1) % slides.length;
+    showSlide(next);
+}
+
+function setSlide(n) {
+    clearInterval(carouselInterval); // se o usuário clicar, reseta o auto-play
+    showSlide(n);
+    carouselInterval = setInterval(nextSlide, 4000);
+}
+
+// garantir inicialização depois do DOM carregado
+document.addEventListener('DOMContentLoaded', initCarousel);
+

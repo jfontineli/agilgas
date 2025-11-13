@@ -10,25 +10,34 @@ html {
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     line-height: 1.6;
-    color: #1e293b;
+    color: #1f2933;
     background-color: #f8fafc;
 }
 
-/* Custom Properties */
+/* Custom Properties - paleta Supergasbras */
 :root {
-    --primary-blue: #1e40af;
-    --light-blue: #3b82f6;
-    --accent-yellow: #fbbf24;
-    --yellow-hover: #f59e0b;
-    --dark-gray: #1e293b;
-    --light-gray: #64748b;
-    --white: #ffffff;
+    --sg-orange: #F15A22;
+    --sg-orange-dark: #D84C1F;
+    --sg-yellow: #FFC857;
+    --sg-black: #050608;
+    --sg-dark-gray: #1f2933;
+    --sg-light-gray: #64748b;
+    --sg-white: #ffffff;
+
+    /* manter nomes antigos para reaproveitar o CSS/JS */
+    --primary-blue: var(--sg-black);
+    --light-blue: var(--sg-orange);
+    --accent-yellow: var(--sg-orange);
+    --yellow-hover: var(--sg-orange-dark);
+    --dark-gray: var(--sg-dark-gray);
+    --light-gray: var(--sg-light-gray);
+    --white: var(--sg-white);
     --slate-50: #f8fafc;
     --slate-100: #f1f5f9;
-    --slate-800: #1e293b;
-    --slate-900: #0f172a;
+    --slate-800: #111827;
+    --slate-900: #020617;
 }
 
 /* Utility Classes */
@@ -44,26 +53,28 @@ body {
     gap: 0.5rem;
     padding: 1rem 2rem;
     border: none;
-    border-radius: 50px;
+    border-radius: 999px;
     font-weight: 700;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     text-decoration: none;
     cursor: pointer;
     transition: all 0.2s ease;
     text-align: center;
     justify-content: center;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
 }
 
 .btn-primary {
     background-color: var(--accent-yellow);
-    color: var(--primary-blue);
-    box-shadow: 0 10px 25px rgba(251, 191, 36, 0.3);
+    color: #111827;
+    box-shadow: 0 10px 25px rgba(241, 90, 34, 0.35);
 }
 
 .btn-primary:hover {
     background-color: var(--yellow-hover);
     transform: translateY(-2px);
-    box-shadow: 0 15px 35px rgba(251, 191, 36, 0.4);
+    box-shadow: 0 15px 35px rgba(216, 76, 31, 0.4);
 }
 
 .btn-full {
@@ -72,14 +83,14 @@ body {
 
 /* Header */
 .header {
-    background-color: var(--primary-blue);
+    background-color: rgba(0, 0, 0, 0.95);
     color: var(--white);
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
-    box-shadow: 0 4px 20px rgba(30, 64, 175, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
 .nav {
@@ -92,26 +103,40 @@ body {
 .nav-logo {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.75rem;
 }
 
 .logo-icon {
-    width: 2rem;
-    height: 2rem;
+    width: 2.4rem;
+    height: 2.4rem;
     background-color: var(--accent-yellow);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--primary-blue);
+    color: #111827;
     font-size: 1.2rem;
     font-weight: bold;
 }
 
+.logo-text-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+}
+
 .logo-text {
-    font-size: 1.25rem;
-    font-weight: 700;
-    letter-spacing: 0.05em;
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+}
+
+.logo-subtext {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #e5e7eb;
 }
 
 .nav-menu {
@@ -126,10 +151,28 @@ body {
     padding: 0.5rem 0;
     position: relative;
     transition: color 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.8rem;
+}
+
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-yellow);
+    transition: width 0.2s ease;
 }
 
 .nav-link:hover {
     color: var(--accent-yellow);
+}
+
+.nav-link:hover::after {
+    width: 100%;
 }
 
 .nav-toggle {
@@ -143,7 +186,7 @@ body {
 
 /* Banner Section */
 .banner-section {
-    background: linear-gradient(135deg, var(--slate-900) 0%, var(--slate-800) 50%, var(--slate-900) 100%);
+    background-color: var(--sg-black);
     color: var(--white);
     padding: 8rem 0 4rem;
     position: relative;
@@ -151,20 +194,48 @@ body {
     margin-top: 80px;
 }
 
+/* Chevrons em laranja, inspirados nas peças da Supergasbras */
+.banner-section::before,
+.banner-section::after {
+    content: "";
+    position: absolute;
+    top: -20%;
+    bottom: -20%;
+    left: -10%;
+    width: 40%;
+    background: linear-gradient(
+        to right,
+        #ffef9a 0%,
+        #ffc857 20%,
+        #ff9f1c 45%,
+        #f15a22 70%,
+        transparent 100%
+    );
+    clip-path: polygon(0 0, 65% 0, 100% 50%, 65% 100%, 0 100%);
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.banner-section::after {
+    left: -18%;
+    width: 32%;
+    opacity: 0.2;
+}
+
 .banner-pattern {
     position: absolute;
     inset: 0;
-    opacity: 0.1;
-    background-image: 
-        radial-gradient(circle at 10% 20%, var(--accent-yellow) 0%, transparent 2%),
-        radial-gradient(circle at 20% 80%, var(--accent-yellow) 0%, transparent 2%),
-        radial-gradient(circle at 80% 10%, var(--accent-yellow) 0%, transparent 2%),
-        radial-gradient(circle at 90% 90%, var(--accent-yellow) 0%, transparent 2%);
+    opacity: 0.35;
+    background-image:
+        radial-gradient(circle at 10% 20%, #f97316 0%, transparent 55%),
+        radial-gradient(circle at 80% 0%, #fbbf24 0%, transparent 55%),
+        radial-gradient(circle at 100% 80%, #f97316 0%, transparent 55%);
+    mix-blend-mode: screen;
 }
 
 .banner-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.2fr 0.8fr;
     gap: 3rem;
     align-items: center;
     position: relative;
@@ -176,20 +247,32 @@ body {
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 1rem;
+    text-transform: uppercase;
 }
 
 .banner-brand {
     display: block;
     color: var(--accent-yellow);
-    font-size: 3.5rem;
+    font-size: 3.2rem;
     font-weight: 900;
+    letter-spacing: 0.12em;
 }
 
 .banner-description {
-    font-size: 1.25rem;
-    color: #cbd5e1;
-    margin-bottom: 2rem;
-    max-width: 500px;
+    font-size: 1.1rem;
+    color: #e5e7eb;
+    margin-bottom: 1.5rem;
+    max-width: 540px;
+}
+
+.banner-phone {
+    margin-top: 1.25rem;
+    font-size: 0.95rem;
+    color: #e5e7eb;
+}
+
+.banner-phone strong {
+    color: var(--accent-yellow);
 }
 
 .banner-image {
@@ -198,17 +281,18 @@ body {
     position: relative;
 }
 
-.delivery-image {
-    max-width: 400px;
+.cylinder-image {
+    max-width: 360px;
     width: 100%;
     height: auto;
     object-fit: contain;
-    border-radius: 12px;
+    filter: drop-shadow(0 30px 50px rgba(0, 0, 0, 0.8));
 }
 
 .decorative-elements {
     position: absolute;
     inset: 0;
+    pointer-events: none;
 }
 
 .decoration {
@@ -218,21 +302,21 @@ body {
 }
 
 .decoration-1 {
-    width: 2rem;
-    height: 2rem;
+    width: 2.2rem;
+    height: 2.2rem;
     background-color: var(--accent-yellow);
-    top: -1rem;
-    right: -1rem;
-    opacity: 0.8;
+    top: 0;
+    right: 0.5rem;
+    opacity: 0.9;
 }
 
 .decoration-2 {
-    width: 1.5rem;
-    height: 1.5rem;
-    background-color: var(--light-blue);
-    bottom: -0.5rem;
-    left: -0.5rem;
-    opacity: 0.7;
+    width: 1.7rem;
+    height: 1.7rem;
+    background-color: var(--sg-yellow);
+    bottom: 0;
+    left: 0.5rem;
+    opacity: 0.8;
     animation-delay: 0.5s;
 }
 
@@ -247,35 +331,36 @@ body {
 
 /* Hero Section */
 .hero-section {
-    background: linear-gradient(135deg, var(--slate-50) 0%, #e0f2fe 100%);
+    background: linear-gradient(135deg, var(--slate-50) 0%, #ffe9d7 50%, #fff 100%);
     padding: 4rem 0;
 }
 
 .hero-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.1fr 0.9fr;
     gap: 3rem;
     align-items: center;
 }
 
 .hero-title {
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: 900;
-    color: var(--primary-blue);
+    color: var(--sg-dark-gray);
     line-height: 1.1;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.3rem;
+    text-transform: uppercase;
 }
 
 .hero-highlight {
-    color: var(--light-blue);
+    color: var(--accent-yellow);
 }
 
 .hero-description {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     color: var(--light-gray);
     font-weight: 500;
     margin-bottom: 2rem;
-    max-width: 500px;
+    max-width: 520px;
 }
 
 .hero-illustrations {
@@ -288,35 +373,36 @@ body {
     background: var(--white);
     padding: 2rem;
     border-radius: 24px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
     text-align: center;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     animation: fadeIn 0.6s ease-out;
 }
 
 .illustration-card:hover {
-    transform: scale(1.05);
+    transform: translateY(-4px);
+    box-shadow: 0 24px 50px rgba(0, 0, 0, 0.12);
 }
 
 .illustration-icon {
-    width: 5rem;
-    height: 5rem;
-    background-color: var(--primary-blue);
-    color: var(--white);
+    width: 4.2rem;
+    height: 4.2rem;
+    background-color: var(--accent-yellow);
+    color: #111827;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto 1rem;
-    border: 4px solid var(--accent-yellow);
-    font-size: 2rem;
+    border: 4px solid rgba(0, 0, 0, 0.08);
+    font-size: 1.8rem;
 }
 
 .card-title {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     font-weight: 700;
-    color: var(--primary-blue);
-    margin-bottom: 0.5rem;
+    color: var(--sg-dark-gray);
+    margin-bottom: 0.4rem;
 }
 
 .card-description {
@@ -327,7 +413,7 @@ body {
     background: var(--white);
     padding: 1.5rem;
     border-radius: 24px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
     animation: fadeIn 0.6s ease-out;
 }
 
@@ -339,15 +425,15 @@ body {
 }
 
 .app-icon {
-    width: 4rem;
-    height: 4rem;
+    width: 3.4rem;
+    height: 3.4rem;
     background-color: var(--accent-yellow);
-    color: var(--primary-blue);
+    color: #111827;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
 }
 
 .app-info {
@@ -379,8 +465,8 @@ body {
 }
 
 .tracking-card {
-    background-color: var(--light-blue);
-    color: var(--white);
+    background-color: var(--accent-yellow);
+    color: var(--sg-black);
     padding: 0.75rem;
     border-radius: 8px;
     text-align: center;
@@ -391,7 +477,7 @@ body {
 }
 
 .map-link {
-    color: var(--white);
+    color: var(--sg-black);
     text-decoration: none;
     transition: opacity 0.2s ease;
 }
@@ -402,7 +488,7 @@ body {
 
 .map-link p {
     margin: 0;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 /* Features Section */
@@ -417,22 +503,24 @@ body {
 }
 
 .section-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--primary-blue);
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--sg-dark-gray);
     margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
 }
 
 .section-description {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     color: var(--light-gray);
-    max-width: 600px;
+    max-width: 640px;
     margin: 0 auto;
 }
 
 .features-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
 }
 
@@ -448,27 +536,29 @@ body {
 }
 
 .feature-card:hover {
-    background: #e0f2fe;
+    background: #ffe9d7;
 }
 
 .feature-icon {
-    width: 4rem;
-    height: 4rem;
+    width: 3.8rem;
+    height: 3.8rem;
     background-color: var(--accent-yellow);
-    color: var(--primary-blue);
+    color: #111827;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 1.5rem;
-    font-size: 2rem;
+    margin: 0 auto 1.2rem;
+    font-size: 1.9rem;
 }
 
 .feature-title {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     font-weight: 700;
-    color: var(--primary-blue);
-    margin-bottom: 1rem;
+    color: var(--sg-dark-gray);
+    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .feature-description {
@@ -477,7 +567,7 @@ body {
 
 /* Contact Section */
 .contact-section {
-    background-color: var(--primary-blue);
+    background-color: var(--sg-black);
     color: var(--white);
     padding: 4rem 0;
 }
@@ -492,7 +582,7 @@ body {
 
 .contact-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1.1fr 0.9fr;
     gap: 3rem;
     margin-top: 3rem;
 }
@@ -513,7 +603,7 @@ body {
     width: 3rem;
     height: 3rem;
     background-color: var(--accent-yellow);
-    color: var(--primary-blue);
+    color: #111827;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -531,21 +621,22 @@ body {
 }
 
 .order-card {
-    background: #1e3a8a;
+    background: #111827;
     padding: 2rem;
     border-radius: 16px;
     text-align: center;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5);
 }
 
 .order-title {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
 }
 
 /* Footer */
 .footer {
-    background-color: var(--slate-800);
+    background-color: #020617;
     color: var(--white);
     padding: 3rem 0;
 }
@@ -560,7 +651,7 @@ body {
 .footer-logo {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.75rem;
 }
 
 .social-links {
@@ -579,13 +670,14 @@ body {
 }
 
 .footer-bottom {
-    border-top: 1px solid #374151;
+    border-top: 1px solid #1f2937;
     padding-top: 2rem;
     text-align: center;
 }
 
 .copyright {
     color: #94a3b8;
+    font-size: 0.9rem;
 }
 
 /* Toast Notification */
@@ -663,6 +755,105 @@ body {
     }
 }
 
+/* ==== CARROSSEL SUPERGASBRAS ==== */
+
+.banner-image {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.banner-carousel {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    margin: 0 auto;
+}
+
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    background: radial-gradient(circle at top, rgba(255,255,255,0.1), transparent 60%);
+}
+
+.carousel-slide {
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    position: absolute;
+    inset: 0;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    position: relative;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    filter: drop-shadow(0 24px 40px rgba(0, 0, 0, 0.7));
+}
+
+/* Bolinhas */
+.carousel-dots {
+    margin-top: 14px;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+
+.dot {
+    width: 11px;
+    height: 11px;
+    background-color: #f15a22;
+    opacity: 0.35;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.dot.active {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+/* ===== CAROUSEL CAPTIONS ===== */
+
+.carousel-caption {
+    text-align: center;
+    margin-top: 12px;
+    color: #fff;
+}
+
+.carousel-caption h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: #F15A22; /* laranja Supergasbras */
+}
+
+.carousel-caption p {
+    font-size: 0.95rem;
+    color: #e5e5e5;
+    line-height: 1.35rem;
+}
+
+
+/* Mobile: ocupar linha inteira abaixo do texto */
+@media (max-width: 768px) {
+    .banner-content {
+        grid-template-columns: 1fr;
+    }
+
+    .banner-image {
+        margin-top: 2rem;
+    }
+}
+
+
 /* Mobile Responsive */
 @media (max-width: 768px) {
     .nav-menu {
@@ -671,11 +862,11 @@ body {
         top: 100%;
         left: 0;
         right: 0;
-        background-color: var(--primary-blue);
+        background-color: #000;
         flex-direction: column;
         padding: 1rem;
         gap: 0.5rem;
-        border-top: 1px solid #1e3a8a;
+        border-top: 1px solid #1f2937;
     }
 
     .nav-menu.show {
@@ -693,20 +884,27 @@ body {
         text-align: center;
     }
 
+    .banner-section::before,
+    .banner-section::after {
+        opacity: 0.25;
+        left: -40%;
+        width: 80%;
+    }
+
     .banner-title {
         font-size: 2rem;
     }
 
     .banner-brand {
-        font-size: 2.5rem;
+        font-size: 2.3rem;
     }
 
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
 
     .section-title {
-        font-size: 2rem;
+        font-size: 1.7rem;
     }
 
     .features-grid {

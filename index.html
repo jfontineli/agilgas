@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ÁGIL GAS - Entrega Rápida de Gás</title>
-    <meta name="description" content="Entrega rápida e segura de gás direto na sua casa. ÁGIL GAS - qualidade, rapidez e segurança garantidas.">
+    <title>Ágil Gás - Revenda Autorizada Supergasbras em Gama / DF</title>
+    <meta name="description" content="Revenda autorizada Supergasbras em Gama / DF. Entrega rápida do botijão oficial Supergasbras com segurança e qualidade.">
     
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Google Fonts (Supergasbras: Montserrat + Source Serif 4) -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -21,9 +21,12 @@
         <nav class="nav container">
             <div class="nav-logo">
                 <div class="logo-icon">
-                    <i class="fas fa-fire"></i>
+					<i class="fas fa-fire-flame-simple"></i>
+				</div>
+                <div class="logo-text-group">
+                    <span class="logo-text">ÁGIL GÁS</span>
+                    <span class="logo-subtext">Revenda Autorizada Supergasbras</span>
                 </div>
-                <span class="logo-text">ÁGIL GAS</span>
             </div>
             
             <div class="nav-menu" id="nav-menu">
@@ -45,23 +48,80 @@
                 <div class="banner-text">
                     <h1 class="banner-title">
                         Compre seu botijão
-                        <span class="banner-brand">ÁGIL GAS</span>
+                        <span class="banner-brand">SUPERGASBRAS</span>
                     </h1>
                     <p class="banner-description">
-                        Entrega rápida, segura e com qualidade garantida direto na sua casa.
+                        Revenda autorizada Ágil Gás em Gama / Ponte Alta Norte. 
+                        Entrega rápida e segura do botijão oficial Supergasbras.
                     </p>
                     <button class="btn btn-primary" onclick="showOrderToast()">
-                        FAÇA SEU PEDIDO AGORA
+                        PEDIR GÁS SUPERGASBRAS
                     </button>
+                    <p class="banner-phone">
+                        Ligue ou chame no WhatsApp:
+                        <strong>(61) 99617-6398</strong>
+                    </p>
                 </div>
-                <div class="banner-image">
-                    <img src="attached_assets/Imagem do WhatsApp de 2025-07-15 à(s) 16.37.13_b68bca60_1755955705597.jpg" 
-                         alt="Entregador Ágil Gas com botijão" class="delivery-image">
-                    <div class="decorative-elements">
-                        <div class="decoration decoration-1"></div>
-                        <div class="decoration decoration-2"></div>
-                    </div>
-                </div>
+                <div class="banner-carousel">
+    <div class="carousel-container">
+
+        <!-- SLIDE 1 — Banner Principal -->
+        <div class="carousel-slide active">
+            <img src="img/tamanho_vasilhames.png" alt="Supergasbras tamanhos de vasilhames">
+            <div class="carousel-caption">
+                <h3>Soluções para todas as necessidades</h3>
+                <p>Botijões e cilindros Supergasbras para uso residencial, comercial e industrial.</p>
+            </div>
+        </div>
+
+        <!-- SLIDE 2 — P13 -->
+        <div class="carousel-slide">
+            <img src="img/produto-p13.jpg" alt="Botijão P13 Supergasbras">
+            <div class="carousel-caption">
+                <h3>P13 – O botijão ideal para sua cozinha</h3>
+                <p>Perfeito para uso residencial: seguro, prático e confiável.</p>
+            </div>
+        </div>
+
+        <!-- SLIDE 3 — P20 -->
+        <div class="carousel-slide">
+            <img src="img/produto-p20.png" alt="Botijão P20 Supergasbras">
+            <div class="carousel-caption">
+                <h3>P20 – Mais autonomia e alto desempenho</h3>
+                <p>Iideal para padarias, restaurantes, bares e empilhadeiras.</p>
+            </div>
+        </div>
+
+        <!-- SLIDE 4 — P45 -->
+        <div class="carousel-slide">
+            <img src="img/produto-p45.jpg" alt="Cilindro P45 Supergasbras">
+            <div class="carousel-caption">
+                <h3>P45 – A potência que o seu negócio precisa</h3>
+                <p>45 kg de GLP para estabelecimentos com alto consumo.</p>
+            </div>
+        </div>
+
+        <!-- SLIDE 5 — SempreGás Vertical -->
+        <div class="carousel-slide">
+            <img src="img/produto-sempregas.jpg" alt="SempreGás vertical Supergasbras">
+            <div class="carousel-caption">
+                <h3>SempreGás – Tecnologia para o seu consumo</h3>
+                <p>Medição inteligente, previsão de consumo e troca agendada.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bolinhas -->
+    <div class="carousel-dots">
+        <span class="dot active" onclick="setSlide(0)"></span>
+        <span class="dot" onclick="setSlide(1)"></span>
+        <span class="dot" onclick="setSlide(2)"></span>
+        <span class="dot" onclick="setSlide(3)"></span>
+        <span class="dot" onclick="setSlide(4)"></span>
+    </div>
+</div>
+
             </div>
         </div>
         <div class="banner-gradient"></div>
@@ -73,14 +133,15 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <h2 class="hero-title">
-                        PEDIU,<br />
-                        <span class="hero-highlight">CHEGOU!</span>
+                        PEDIU SUPERGASBRAS,<br />
+                        <span class="hero-highlight">CHEGOU COM A ÁGIL GÁS!</span>
                     </h2>
                     <p class="hero-description">
-                        Entrega rápida e segura de gás direto na sua casa.
+                        Atendimento especializado na região do Gama e Ponte Alta. 
+                        Gás oficial Supergasbras, segurança total e entrega ágil na sua porta.
                     </p>
                     <button class="btn btn-primary" onclick="showOrderToast()">
-                        FAÇA SEU PEDIDO
+                        FAZER PEDIDO AGORA
                         <i class="fas fa-arrow-right"></i>
                     </button>
                 </div>
@@ -88,21 +149,21 @@
                 <div class="hero-illustrations">
                     <div class="illustration-card">
                         <div class="illustration-icon">
-                            <i class="fas fa-user"></i>
+                            <i class="fas fa-user-check"></i>
                         </div>
-                        <h3 class="card-title">Entregador Profissional</h3>
-                        <p class="card-description">Equipe treinada e equipada</p>
+                        <h3 class="card-title">Revenda Autorizada</h3>
+                        <p class="card-description">Parceira oficial Supergasbras, seguindo todas as normas de segurança.</p>
                     </div>
                     
                     <div class="illustration-card">
                         <div class="app-interface">
                             <div class="app-header">
                                 <div class="app-icon">
-                                    <i class="fas fa-user"></i>
+                                    <i class="fas fa-map-marker-alt"></i>
                                 </div>
                                 <div class="app-info">
-                                    <h3 class="card-title">Pedido Fácil</h3>
-                                    <p class="card-description">Pelo app ou telefone</p>
+                                    <h3 class="card-title">Fácil de chegar</h3>
+                                    <p class="card-description">Depósito com acesso rápido à Ponte Alta e Gama.</p>
                                 </div>
                             </div>
                             <div class="app-content">
@@ -111,7 +172,7 @@
                                     <span>Nossa localização</span>
                                 </div>
                                 <div class="tracking-card">
-                                    <i class="fas fa-map-marker-alt"></i>
+                                    <i class="fas fa-map"></i>
                                     <a href="https://maps.app.goo.gl/Wm5ZhZBKxT2euLV76" target="_blank" class="map-link">
                                         <p>Ver no Google Maps</p>
                                     </a>
@@ -128,9 +189,9 @@
     <section class="features-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Por que escolher a ÁGIL GAS?</h2>
+                <h2 class="section-title">Por que escolher a Ágil Gás com Supergasbras?</h2>
                 <p class="section-description">
-                    Oferecemos o melhor serviço de entrega de gás com qualidade, rapidez e segurança.
+                    Toda a força da marca Supergasbras com a agilidade de uma revenda local que conhece a sua região.
                 </p>
             </div>
             
@@ -140,23 +201,23 @@
                         <i class="fas fa-truck"></i>
                     </div>
                     <h3 class="feature-title">Entrega Rápida</h3>
-                    <p class="feature-description">Chegamos até você em até 30 minutos após o pedido.</p>
+                    <p class="feature-description">Chegamos até você em pouco tempo após o pedido, com rota otimizada para Gama e Ponte Alta.</p>
                 </div>
                 
                 <div class="feature-card" style="animation-delay: 0.2s">
                     <div class="feature-icon">
                         <i class="fas fa-shield-alt"></i>
                     </div>
-                    <h3 class="feature-title">Segurança Total</h3>
-                    <p class="feature-description">Profissionais certificados e equipamentos de qualidade.</p>
+                    <h3 class="feature-title">Segurança Supergasbras</h3>
+                    <p class="feature-description">Botijões oficiais, lacres intactos e equipe treinada conforme as normas da distribuidora.</p>
                 </div>
                 
                 <div class="feature-card" style="animation-delay: 0.4s">
                     <div class="feature-icon">
-                        <i class="fas fa-mobile-alt"></i>
+                        <i class="fas fa-gas-pump"></i>
                     </div>
-                    <h3 class="feature-title">Pedido Fácil</h3>
-                    <p class="feature-description">Faça seu pedido pelo app, site ou telefone com total comodidade.</p>
+                    <h3 class="feature-title">Botijão Oficial</h3>
+                    <p class="feature-description">Cor e identidade visual Supergasbras, garantindo procedência e qualidade do gás.</p>
                 </div>
             </div>
         </div>
@@ -166,9 +227,9 @@
     <section class="contact-section" id="sobre">
         <div class="container">
             <div class="contact-content">
-                <h2 class="section-title">Entre em Contato</h2>
+                <h2 class="section-title">Fale com a Ágil Gás</h2>
                 <p class="section-description">
-                    Estamos prontos para atender você com o melhor serviço de entrega de gás.
+                    Precisa do seu botijão Supergasbras? Fale com a nossa equipe e receba o gás oficial com toda segurança.
                 </p>
                 
                 <div class="contact-grid">
@@ -178,8 +239,8 @@
                                 <i class="fas fa-phone"></i>
                             </div>
                             <div class="contact-details">
-                                <h3>Telefone</h3>
-                                <p>(61) 99617-6398</p>
+                                <h3>Telefone / WhatsApp</h3>
+                                <p>(61) 9617-6398</p>
                             </div>
                         </div>
                         
@@ -189,7 +250,7 @@
                             </div>
                             <div class="contact-details">
                                 <h3>Localização</h3>
-                                <p>Gama, DF</p>
+                                <p>Ponte Alta / Gama - DF</p>
                             </div>
                         </div>
                         
@@ -200,13 +261,13 @@
                             <div class="contact-details">
                                 <h3>Horário</h3>
                                 <p>Segunda a Sábado - 08h às 20h</p>
-								<p>Domingo e Feriado - 08h às 12h</p>
+								<p>Domingos e Feriados - 08h às 12h</p>
                             </div>
                         </div>
                     </div>
                     
                     <div class="order-card">
-                        <h3 class="order-title">Faça seu Pedido Agora</h3>
+                        <h3 class="order-title">Peça seu botijão Supergasbras</h3>
                         <button class="btn btn-primary btn-full" onclick="showOrderToast()">
                             <i class="fas fa-gas-pump"></i>
                             PEDIR GÁS AGORA
@@ -223,9 +284,12 @@
             <div class="footer-content">
                 <div class="footer-logo">
                     <div class="logo-icon">
-                        <i class="fas fa-fire"></i>
+                        <i class="fas fa-gas-pump"></i>
                     </div>
-                    <span class="logo-text">ÁGIL GAS</span>
+                    <div class="logo-text-group">
+                        <span class="logo-text">ÁGIL GÁS</span>
+                        <span class="logo-subtext">Revenda Autorizada Supergasbras</span>
+                    </div>
                 </div>
                 
                 <div class="social-links">
@@ -240,7 +304,7 @@
             
             <div class="footer-bottom">
                 <p class="copyright">
-                    &copy; <span id="current-year"></span> ÁGIL GAS. Todos os direitos reservados.
+                    &copy; <span id="current-year"></span> Ágil Gás - Revenda Supergasbras. Todos os direitos reservados.
                 </p>
             </div>
         </div>
@@ -254,7 +318,7 @@
             </div>
             <div class="toast-text">
                 <h4>Redirecionando para WhatsApp!</h4>
-                <p>Você será direcionado para fazer seu pedido.</p>
+                <p>Você será direcionado para fazer seu pedido com a Ágil Gás.</p>
             </div>
             <button class="toast-close" onclick="hideToast()">
                 <i class="fas fa-times"></i>
