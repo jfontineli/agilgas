@@ -617,7 +617,7 @@ body {
 }
 
 .contact-details p {
-    color: #bfdbfe;
+    color: var(--white);
 }
 
 .order-card {
